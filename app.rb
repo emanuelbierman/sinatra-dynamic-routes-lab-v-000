@@ -38,6 +38,7 @@ class App < Sinatra::Base
   # Create a dynamic route at get '/:operation/:number1/:number2' that accepts an operation (add, subtract, multiply or divide) and performs the operation on the two numbers provided. For example, going to /add/1/2 should render 3.
 
   get '/:operation/:number1/:number2' do
+    operations = ["add", "subtract", "multiply", "divide"]
     @operation = params[:operation]
     @number1 = params[:number1]
     @number2 = params[:number2]
